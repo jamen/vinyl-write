@@ -7,7 +7,7 @@
   "name": "vinyl-write",
   "author": "Jamen Marzonie",
   "version": "0.1.0",
-  "description": "Small module to write vinyl files.",
+  "description": "Quickly write vinyl files using callbacks, promises, or streams.",
   "main": "lib",
   "repository": {
     "type": "git",

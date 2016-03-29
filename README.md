@@ -1,6 +1,12 @@
 # vinyl-write
 > Quickly write vinyl files using callbacks, promises, or streams.
 
+Use callbacks, promises, or streams to quickly write [vinyl files][vinyl]:
+```javascript
+const file = new File({ ... });
+write(file);
+```
+
 ## Installation
 ```shell
 $ npm install --save vinyl-write
