@@ -6,7 +6,7 @@
   },
   "name": "vinyl-write",
   "author": "Jamen Marzonie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Quickly write vinyl files using callbacks, promises, or streams.",
   "main": "lib",
   "repository": {
