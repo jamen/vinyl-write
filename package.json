@@ -6,7 +6,7 @@
   },
   "name": "vinyl-write",
   "author": "Jamen Marzonie",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Small module to write vinyl files.",
   "main": "lib",
   "repository": {
