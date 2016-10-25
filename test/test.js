@@ -2,16 +2,10 @@ var test = require('tape')
 var write = require('../')
 var fs = require('fs')
 var Vinyl = require('vinyl')
+var rimraf = require('rimraf')
 
 function clean () {
-  try {
-    fs.unlinkSync(`${__dirname}/output.txt`)
-    fs.unlinkSync(`${__dirname}/output-stream.txt`)
-    fs.unlinkSync(`${__dirname}/output/output.txt`)
-    fs.rmdirSync(`${__dirname}/output`)
-  } catch (err) {
-    if (err.code !== 'ENOENT') throw err
-  }
+  rimraf.sync(`${__dirname}/output*`)
 }
 
 clean()
