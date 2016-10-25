@@ -1,53 +1,43 @@
-# vinyl-write
-> Quickly write vinyl files using callbacks, promises, or streams.
+# vinyl-write [![NPM version](https://badge.fury.io/js/vinyl-write.svg)](https://npmjs.org/package/vinyl-write) [![Build Status](https://travis-ci.org/jamen/vinyl-write.svg?branch=master)](https://travis-ci.org/jamen/vinyl-write)
 
-Use callbacks, promises, or streams to quickly write [vinyl files][vinyl]:
+> Write vinyl objects to the file system
+
 ```javascript
-const file = new File({ ... });
-write(file);
+const write = require('vinyl-write')
+const Vinyl = require('vinyl')
+
+// Get a `Vinyl` object somehow
+const file = new Vinyl({ ...options })
+
+// Write it
+write(file, function (err) {
+  if (err) console.error(err)
+})
 ```
 
 ## Installation
+
 ```shell
 $ npm install --save vinyl-write
 ```
 
 ## Usage
+
 ### `write(file, [callback])`
-  - `file` ([`File`][vinyl]): The vinyl file to write.
-  - `callback` (`function`): Optional callback system.
 
-If a callback is not supplied, it wraps/returns a `Promise` instead.
+Writes a [`Vinyl`](https://github.com/gulpjs/vinyl) object to the file system, with a completion callback.
 
-Use [`promise-routine`][routine] in parity with this module to write multiple files at once.
+  - `file` (`Vinyl`): Vinyl object you are writing.
+  - `callback` (`function`): Optional completion callback.
 
-Examples:
+The callback receives `(err)` as parameter.
+
 ```javascript
-// Using with callback
-write(file, function(err) {
+write(file, function (err) {
   // ...
-});
-
-// Using with promise
-write(file)
-.then(...)
-.catch(...);
-
-// Using with promise-routine to write multiple
-routine(write, ...files)
-.then(...)
-.catch(...);
+})
 ```
 
-## Credits
-| ![jamen][avatar] |
-|:---:|
-| [Jamen Marzonie][github] |
-
 ## License
-[MIT](LICENSE) &copy; Jamen Marzonie
 
-  [avatar]: https://avatars.githubusercontent.com/u/6251703?v=3&s=125
-  [github]: https://github.com/jamen
-  [vinyl]: https://github.com/gulpjs/vinyl
-  [routine]: https://github.com/jamen/promise-routine
+[MIT](LICENSE) &copy; Jamen Marzonie
